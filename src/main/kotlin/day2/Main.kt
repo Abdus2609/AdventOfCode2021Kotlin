@@ -48,5 +48,7 @@ fun partTwo(filename: String): Int {
 }
 
 fun main(args: Array<String>) {
-    println(partTwo("day2/input.txt"))
+    val filename: String = "day2/input.txt"
+    println(partOne(filename))
+    println(partTwo(filename))
 }
