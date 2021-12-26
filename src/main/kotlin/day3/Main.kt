@@ -14,7 +14,7 @@ fun partOne(filename: String): Int {
     br.forEachLine { nums.add(it) }
 
     for (i in 0 until nums[0].length) {
-        val numOnes: Int = nums.filter{ it[i] == '1' }.count()
+        val numOnes: Int = nums.count { it[i] == '1' }
         val numZeros: Int = nums.size - numOnes
 
         val max: Char = if (numOnes >= numZeros) '1' else '0'
@@ -41,9 +41,9 @@ fun partTwo(filename: String): Int {
         co2List.add(it)
     }
 
-    var i: Int = 0
+    var i = 0
     while (oxygenList.size > 1) {
-        val numOnes: Int = oxygenList.filter{ it[i] == '1'}.count()
+        val numOnes: Int = oxygenList.filter { it[i] == '1' }.count()
         val numZeros: Int = oxygenList.size - numOnes
 
         val max: Char = if (numOnes >= numZeros) '1' else '0'
@@ -54,7 +54,7 @@ fun partTwo(filename: String): Int {
 
     i = 0
     while (co2List.size > 1) {
-        val numOnes: Int = co2List.filter{ it[i] == '1'}.count()
+        val numOnes: Int = co2List.count { it[i] == '1' }
         val numZeros: Int = co2List.size - numOnes
 
         val min: Char = if (numOnes < numZeros) '1' else '0'
@@ -69,8 +69,8 @@ fun partTwo(filename: String): Int {
     return oxygen * co2
 }
 
-fun main(args: Array<String>) {
-    val filename: String = "day3/input.txt"
+fun main() {
+    val filename = "day3/input.txt"
     println(partOne(filename))
-    println(partTwo(filename))
+    println(partTwo("day3/input.txt"))
 }

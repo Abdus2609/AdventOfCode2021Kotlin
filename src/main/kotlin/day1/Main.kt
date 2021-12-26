@@ -7,7 +7,7 @@ fun partOne(filename: String): Int {
     val br: BufferedReader = File(filename).bufferedReader()
     val ints: List<Int> = br.readLines().map { it.toInt() }
 
-    return ints.windowed(2).count {(a, b) -> a < b}
+    return ints.windowed(2).count { (a, b) -> a < b }
 }
 
 fun partTwo(filename: String): Int {
@@ -17,7 +17,7 @@ fun partTwo(filename: String): Int {
     return ints.windowed(4).count { it[0] < it[3] }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val filename: String = "day1/input.txt"
     println(partOne(filename))
     println(partTwo(filename))
