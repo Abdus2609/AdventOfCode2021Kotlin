@@ -47,7 +47,7 @@ fun partTwo(filename: String): Int {
     return horizontal * depth
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val filename: String = "day2/input.txt"
     println(partOne(filename))
     println(partTwo(filename))
